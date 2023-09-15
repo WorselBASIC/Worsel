@@ -1,4 +1,4 @@
 from Statement import Statement
 
-class DataStatement (Statement):
+class StopStatement (Statement):
     '§17 ECMA-55 BASIC Statement'

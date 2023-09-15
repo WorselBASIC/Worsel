@@ -1,6 +1,6 @@
 """
-" File:      ImplementedFunction.py
-" Purpose:   Definition Statement Defintiion  
+" File:      SignificandConstant.py
+" Purpose:   Significant Constant Defintiion  
 " 
 " Copyright: (c) 2023 by Worsel BASIC Working Group 
 "            All Rights Reserved.
@@ -14,16 +14,15 @@
 
 
 """
-" This function uses the following libraries:
+" This file requires the following libraries:
 """
-from Function import Function
+from Constant import Constant
 
 
 
-class ImplementedFunction (Function):
-    '§9 ECMA-55 BASIC'
+class SignificandConstant (Constant):
+    '§6.2.4 ECMA-55 BASIC Constant'
 
 
 
-""" End of ImplementedFunction.py """
-
+""" End of SignificandConstant.py """

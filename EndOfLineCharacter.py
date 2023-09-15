@@ -1,6 +1,6 @@
 """
-" File:      ImplementedFunction.py
-" Purpose:   Definition Statement Defintiion  
+" File:      EndOfLineCharacter.py
+" Purpose:   End of Line Character Definition  
 " 
 " Copyright: (c) 2023 by Worsel BASIC Working Group 
 "            All Rights Reserved.
@@ -14,16 +14,15 @@
 
 
 """
-" This function uses the following libraries:
+" This file uses the following libraries
 """
-from Function import Function
+from Character import Character
 
 
 
-class ImplementedFunction (Function):
-    '§9 ECMA-55 BASIC'
+class EndOfLine (Character):
+    '§3.3 ECMA-55 BASIC End Of Line Definition'
 
 
 
-""" End of ImplementedFunction.py """
-
+""" End of EndOfLineCharacter.py """

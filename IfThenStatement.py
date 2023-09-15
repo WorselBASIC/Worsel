@@ -1,4 +1,5 @@
 from Statement import Statement
 
-class DataStatement (Statement):
+class IfThenStatement (Statement):
     '§17 ECMA-55 BASIC Statement'
+    
