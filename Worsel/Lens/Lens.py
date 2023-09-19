@@ -1,4 +1,21 @@
-from ..Parser.StatementBlock import StatementBlock
+"""
+" Dynamic relative path import hook
+"""
+import sys
+import os
+
+x0 = __file__
+x1 = os.path.split (x0)
+x2 = os.path.split (x1 [0])
+x3 = x2 [0]
+sys.path.append (x3)
+
+
+
+"""
+" This file uses the following libraries
+"""
+from Parser.StatementBlock import StatementBlock
 
 
 
@@ -7,6 +24,9 @@ class Lens (StatementBlock):
 
 
 
+"""
+" Test harness
+"""
 if __name__ == '__main__':
     lens = Lens ()
     lens ()
