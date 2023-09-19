@@ -34,8 +34,16 @@ from StopStatement       import StopStatement
 
 
 
-ECMA_55_BASIC_Statements = [
+CMDL_Statements = [
     DataStatement,
+    PrintStatement,
+    RandomizeStatement,
+    ReadStatement,
+]
+
+
+
+EMBD_Statements = [
     DefinitionStatement,
     DimensionStatement, 
     GosubStatement, 
@@ -44,9 +52,6 @@ ECMA_55_BASIC_Statements = [
     LetStatement, 
     OnGotoStatement,   
     OptionStatement, 
-    PrintStatement,
-    RandomizeStatement,
-    ReadStatement,
     RemarkStatement,
     ReturnStatement,
     StopStatement,
@@ -58,7 +63,7 @@ class Statements (set):
     'current set of statements in language'
 
     def __init__ (self):
-        set.__init__ (self, ECMA_55_BASIC_Statements)
+        set.__init__ (self, EMBD_Statements)
 
 
 
