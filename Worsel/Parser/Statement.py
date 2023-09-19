@@ -1,6 +1,6 @@
-from Expression import Expression 
+from Kit.Parts.Statement import Statement as _Statement
 
 
 
-class Statement (Expression):
-    pass
+class Statement (_Statement):
+    'lowest level BASIC Statement'

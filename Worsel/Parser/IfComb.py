@@ -1,14 +1,15 @@
-from Comb import Comb
-from ThenStatement     import ThenStatement 
-from ElseStatement     import ElseStatement 
-from ThenElseStatement import ThenElseStatement
+from Kit.Parts.Comb import Comb
+from Then           import Then
+from Else           import Else
+from ThenElse       import ThenElse
 
 
 
 class IfComb (Comb):
+    'select alternatives of IF statement'
+    
     PRECONDITION =   None
-
-    ALTERNATIVES = [ ThenStatement,
-                     ElseStatement, 
-                     ThenElseStatement,
+    ALTERNATIVES = [ Then,
+                     Else, 
+                     ThenElse,
                    ]

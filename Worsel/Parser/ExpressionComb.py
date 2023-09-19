@@ -1,29 +1,33 @@
-from Comb                     import Comb 
-from Expression               import Expression
-from AdditionExpression       import AdditionExpression
-from SubtractionExpression    import SubtractionExpression
-from MultiplicationExpression import MultiplicationExpression
-from DivisionExpression       import DivisionExpression
-from SequenceExpression       import SequenceExpression
-from GreaterEqualExpression   import GreaterEqualExpression
-from GreaterThanExpression    import GreaterThanExpression
-from LessEqualExpression      import LessEqualExpression
-from LessThanExpression       import LessThanExpression
-from NotEqualExpression       import NotEqualExpression
+from Kit.Parts.Comb import Comb
+from Expression     import Expression
+
+from Dyads          import AdditionDyad 
+from Dyads          import SubtractionDyad 
+from Dyads          import MultiplicationDyad 
+from Dyads          import DivisionDyad 
+from Dyads          import SequenceDyad 
+from Dyads          import GEDyad 
+from Dyads          import GTDyad 
+from Dyads          import LTDyad 
+from Dyads          import LEDyad 
+from Dyads          import NEDyad
+from Dyads          import EQDyad
 
 
 
 class ExpressionComb (Comb):
+    'Comb for BASIC Expression'
+    
     PRECONDITION =   Expression 
-
-    ALTERNATIVES = [ AdditionExpression,
-                     SubtractionExpression, 
-                     MultiplicationExpression,
-                     DivisionExpression,
-                     SequenceExpression,
-                     GreaterEqualExpression, 
-                     GreaterThanExpression, 
-                     LessEqualExpression, 
-                     LessThanExpression, 
-                     NotEqualExpression,
+    ALTERNATIVES = [ AdditionDyad,
+                     SubtractionDyad, 
+                     MultiplicationDyad,
+                     DivisionDyad,
+                     SequenceDyad,
+                     GEDyad,
+                     GTDyad,
+                     LEDyad,
+                     LTDyad,
+                     NEDyad,
+                     EQDyad,
                    ]

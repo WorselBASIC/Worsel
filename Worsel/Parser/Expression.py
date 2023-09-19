@@ -1,6 +1,6 @@
-from _Expression import _Expression 
+from Kit.Parts.Expression import Expression as _Expression
 
 
 
 class Expression (_Expression):
-    pass
+    'lowest level BASIC expression'
