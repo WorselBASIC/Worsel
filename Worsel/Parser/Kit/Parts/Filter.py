@@ -1,7 +1,7 @@
 """
 " This file uses the following libraries:
 """
-from Stack.Stack import Stack
+from Kit.Stack.Stack import Stack
 
 
 

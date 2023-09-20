@@ -1,5 +1,5 @@
-from Worsel.Parser.Kit.Filter import Filter
-from Stack  import Stack
+from Kit.Parts.Filter import Filter
+from Stack            import Stack
 
 
 
