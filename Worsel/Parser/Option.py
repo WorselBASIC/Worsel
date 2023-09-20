@@ -6,11 +6,13 @@ from Kit.Parts.Marker import Marker
 
 
 class OptionMarker    (Marker):
+    'marker for OPTION statement'
+    
     MARKER = 'OPTION'
 
 
 
-class OptionStatement (Statement):
+class Option (Statement):
 
     @property
     def sequence (self):

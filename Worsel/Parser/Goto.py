@@ -6,11 +6,14 @@ from Expression       import Expression
 
 
 class GotoMarker    (Marker):
+    'marker for GOTO statement'
+    
     MARKER = 'GOTO'
 
 
 
-class GotoStatement (Statement):
+class Goto          (Statement):
+    'accept GOTO statement'
 
     @property
     def sequence (self):

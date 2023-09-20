@@ -1,28 +1,30 @@
-from Kit.Parts.Token import Token
-from Statement       import Statement 
-from Expression      import Expression
-from Tokens          import EndOfLineToken
+from Kit.Parts.Token  import Token
+from Kit.Parts.Marker import Marker
+from Statement        import Statement 
+from Expression       import Expression
+from Tokens           import EndOfLineToken
 
 
 
-class LetToken    (Token):
+class LetMarker   (Marker):
     MARKER = 'LET'
 
 
-class AssignToken (Token)
+class AssignToken (Token):
     MARKER = '='
 
 
 
 class LValue:
-    pass
+    'accept an assignable value'
 
 
-class LetStatement (Statement):
+class Let (Statement):
+    'accept a LET statement'
 
     @property
     def sequence (self):
-        return [ LetToken,
+        return [ LetMarker,
                  LValue,
                  AssignToken,
                  Expression,

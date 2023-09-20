@@ -20,8 +20,9 @@ class StatementsComb (Comb):
     ALTERNATIVES = [ Let,
                      Option,
                      Stop,
+                     End,
                      Rem,
                      Goto,
-                     OnGoto
+                     OnGoto,
                      If,
                    ]

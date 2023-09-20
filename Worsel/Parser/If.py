@@ -11,7 +11,7 @@ class IfMarker (Marker):
 
 
 class If       (Statement):
-    'Take IF statement'
+    'accept IF statement'
 
     @property
     def sequence (self):

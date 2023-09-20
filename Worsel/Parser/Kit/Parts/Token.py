@@ -3,6 +3,7 @@ from Expression import Expression
 
 
 class Token (Expression):
+    'Accept an expression composed of a single marker'
 
     MARKER = None
     
