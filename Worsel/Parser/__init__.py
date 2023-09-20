@@ -13,5 +13,3 @@ __all__     = [ 'StatementBlock',
                 'OnGotoStatement', 
                 'IfStatement',     
               ]
-
-__package__ = ''

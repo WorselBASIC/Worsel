@@ -9,5 +9,3 @@ __all__     = [ 'Associate',
                 'Template',
                 'Token',
               ]
-
-__package__ = ''

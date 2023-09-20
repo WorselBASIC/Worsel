@@ -4,7 +4,7 @@ from Precedence import Precedence
 
 
 
-class _Expression (Filter):
+class Template (Filter):
     'Filter input for expression'
 
     SEQUENCE   = []

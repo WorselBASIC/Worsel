@@ -27,9 +27,4 @@ class Lens (StatementBlock):
 
 
 
-"""
-" Test harness
-"""
-if __name__ == '__main__':
-    lens = Lens ()
-    lens ()
+""" End of Lens.py """
