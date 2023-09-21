@@ -1,1 +1,3 @@
-__all__     = [' Tape ']
+__all__     = [' Tape ',
+                'StdinTape',
+              ]

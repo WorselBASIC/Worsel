@@ -11,6 +11,6 @@ from os.path import join
 app    = split (main)
 test   = join  (app [0], script)
 
-from Worsel.Lens import Lens
+from Worsel.Lens.Lens import Lens
 lens = Lens ()
 lens ()

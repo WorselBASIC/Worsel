@@ -16,3 +16,15 @@ class Tape:
     @width.setter
     def width (self, wide):
         self._width = wide
+
+
+
+tape = None       # module singleton
+
+
+
+def setup (_tape):
+    'set up input tape for BASIC parser'
+
+    global tape
+    tape = _tape

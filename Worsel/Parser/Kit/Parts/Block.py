@@ -3,6 +3,7 @@
 """
 from Statement import Statement 
 from Comb      import Comb
+from Tape.Tape import Tape
 
 
 
@@ -14,8 +15,8 @@ class Block (Statement):
     def __init__ (self):
         self.comb = self.COMB ()
 
-    def __call__ (self, tape):
-        while (datum := tape.next):
+    def __call__ (self):
+        while (datum := Tape.next):
             if (status := self.comb (datum)):
                 return self.complain (self.comb, status, datum)
             

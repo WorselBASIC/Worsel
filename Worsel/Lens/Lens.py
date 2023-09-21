@@ -25,12 +25,19 @@ sys.path.append (x4d)
 """
 " This file uses the following libraries
 """
-from Worsel.Parser.Block import StatementBlock
+from Worsel.Parser.Block              import Block
+from Worsel.Parser.Block              import hoist
+from Worsel.Parser.StatementsComb     import StatementsComb
+from Worsel.Parser.Kit.Tape.StdinTape import StdinTape
+from Worsel.Parser.Kit.Tape.Tape      import setup
+
+hoist (StatementsComb)  # recusion hoist
+setup (StdinTape)       # default setting of BASIC input tape
 
 
 
-class Lens (StatementBlock):
-    pass
+class Lens (Block):
+    'top-level execution point of BASIC parser'
 
 
 

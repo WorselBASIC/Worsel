@@ -66,12 +66,3 @@ class StdinTape  (_Tape):
     @property
     def next     (self):
         return _Getch ()
-
-
-
-Tape = StdinTape () # Module singleton
-
-    
-"""
-AJF: Need something to change the tape
-"""
