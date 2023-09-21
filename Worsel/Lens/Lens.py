@@ -28,12 +28,8 @@ sys.path.append (x4d)
 from Worsel.Parser.Block              import Block
 from Worsel.Parser.Block              import hoist
 from Worsel.Parser.StatementsComb     import StatementsComb
-from Worsel.Parser.Kit.Tape.StdinTape import StdinTape
-from Worsel.Parser.Kit.Tape.Tape      import setup
 
 hoist (StatementsComb)  # recusion hoist
-setup (StdinTape)       # default setting of BASIC input tape
-
 
 
 class Lens (Block):

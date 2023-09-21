@@ -1,4 +1,4 @@
-from Tape import Tape as _Tape
+from .Tape import Tape as _Tape
 
 
 
@@ -51,7 +51,8 @@ class _Getch:
         except ImportError:
             self.impl = _GetchUnix()
 
-    def __call__(self): return self.impl()
+    def __call__(self): 
+        return self.impl()
 
 
 
@@ -60,7 +61,7 @@ class StdinTape  (_Tape):
     'tape from standard input'
 
     def __init__ (self):
-        Tape.__init__ (self)
+        _Tape.__init__ (self)
         self._width = 1
 
     @property

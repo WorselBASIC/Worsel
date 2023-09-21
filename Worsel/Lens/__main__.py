@@ -11,6 +11,11 @@ from os.path import join
 app    = split (main)
 test   = join  (app [0], script)
 
+from Worsel.Parser.Kit.Tape.StdinTape import StdinTape
+from Worsel.Parser.Kit.Tape.FileTape  import FileTape
+
+
+
 from Worsel.Lens.Lens import Lens
-lens = Lens ()
+lens = Lens (FileTape (test))
 lens ()

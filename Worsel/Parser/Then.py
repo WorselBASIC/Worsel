@@ -9,7 +9,7 @@ class ThenMarker    (Marker):
 
 
 
-class ThenStatement (Statement):
+class Then (Statement):
         
     @property
     def sequence (self):
