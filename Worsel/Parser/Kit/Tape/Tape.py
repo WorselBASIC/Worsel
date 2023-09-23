@@ -14,7 +14,7 @@ class Tape:
         if self._unput == []:
             return None
         
-        result      = self._unput []
+        result      = self._unput [0]
         self._unput = self._unput [:-1]
         return result
 
