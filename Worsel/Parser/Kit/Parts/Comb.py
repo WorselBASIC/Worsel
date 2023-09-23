@@ -16,36 +16,36 @@ class Comb (Filter):
         self.alternatives    = self.ALTERNATIVES
 
 
-    def __call__        (self, datum):
+    def __call__        (self, tape):
         'parse next datum in current statement'
 
         use_this_alternative = None 
 
         # advances current statement
         if self.is_in_use:
-            return Stack.rear (datum)
+            return Stack.rear (tape)
 
         # no current statement yet?
         if self.precondition:
-            if (status := self.precondition (self, datum)):
-                return self.complain (status, self, datum)
+            if (status := self.precondition (self, tape)):
+                return self.complain (status, self, tape)
         
         # find the statement beginning match
         for alternative in self.alternatives:
-            if (self.alternative.is_acceptable (datum)):
+            if (self.alternative.is_acceptable (tape)):
                 use_this_alternative = alternative
                 
         # no statement matches?
         if (not use_this_alternative):
             return self.complain (self.COMPLAIN.ACCEPT,
                                   self,
-                                  datum)
+                                  tape)
 
         # set up current statement on top of stack.
         # (we use a stack because we want a 
         #  non-recursive parser design which we
         #  can more easily port away from Python)       
-        Stack.put (use_this_alternative(), datum)
+        Stack.put (use_this_alternative(), tape)
         self.is_in_use    = True
         Stack.rear.index += 1 
 

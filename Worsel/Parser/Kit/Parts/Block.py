@@ -19,7 +19,8 @@ class Block (Statement):
 
     def __call__ (self):
         while (datum := self.tape.next):
-            if (status := self.comb (datum)):
+            self.tape.unput = datum
+            if (status := self.comb  (self.tape)):
                 return self.complain (self.comb, status, datum)
             
 
