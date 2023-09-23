@@ -16,15 +16,15 @@ class StatementAlts (list):
     'alternative choices for IF statement'
 
     def __init__ (self):
-        list.__init__ ([ Let,
-                         Option,
-                         Stop,
-                         End,
-                         Rem,
-                         Goto,
-                         OnGoto,
-                         If,
-                       ])
+        list.__init__ (self, [ Let,
+                               Option,
+                               Stop,
+                               End,
+                               Rem,
+                               Goto,
+                               OnGoto,
+                               If,
+                             ])
 
 
 

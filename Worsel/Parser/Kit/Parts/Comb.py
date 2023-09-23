@@ -11,35 +11,21 @@ class Comb (Filter):
 
 
     def __init__        (self):
+
         Filter.__init__ (self)
-        self.precondition = self.PRECONDITION
-        self.alternatives = self.ALTERNATIVES
+        
+        self.precondition = None 
+
+        if (self.PRECONDITION != None):
+            self.precondition  = self.PRECONDITION () 
+
+        self.alternatives = None 
+
+        if (self.ALTERNATIVES != None):
+            self.alternatives  = self.ALTERNATIVES ()
 
 
-    @property 
-    def precondition    (self):
-        return self._precondition
-    
-
-    @precondition.setter
-    def precondition    (self, klass):
-        if klass: 
-            self._precondition = klass ()
-        else:
-            self._precondition = None
-
-    @property 
-    def alternatives    (self):
-        return self._alternatives
-    
-    
-    @alternatives.setter
-    def alternatives    (self, klass):
-        if klass: 
-            self._alternatives = klass ()
-        else:
-            self._alternatives = []
-
+        
 
     def __call__        (self, tape):
         'parse next datum in current statement'
@@ -57,7 +43,7 @@ class Comb (Filter):
         
         # find the statement beginning match
         for alternative in self.alternatives:
-            if (self.alternative.is_acceptable (tape)):
+            if (alternative.is_acceptable (tape)):
                 use_this_alternative = alternative
                 
         # no statement matches?

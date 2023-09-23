@@ -8,10 +8,10 @@ class LabelAlts (list):
     'alternative choices for statement label'
 
     def __init__ (self):
-        list.__init__ ([ IndexedLabel,
-                         NamedLabel, 
-                         BlankLabel,
-                       ])
+        list.__init__ (self, [ IndexedLabel,
+                               NamedLabel, 
+                               BlankLabel,
+                             ])
 
 
 
@@ -20,3 +20,6 @@ class LabelComb (Comb):
     
     PRECONDITION = None
     ALTERNATIVES = LabelAlts
+
+    def __init__ (self):
+        Comb.__init__ (self)

@@ -7,15 +7,12 @@ class Tape:
         self._unput = []
 
 
-    @property
-    def _ucheck (self):
+    def ucheck (self):
         'check unput buffer'
 
-        if self._unput == []:
-            return None
-        
-        result      = self._unput [0]
-        self._unput = self._unput [:-1]
+        if self._unput == []: return None 
+        result         = self._unput [0]
+        self._unput    = self._unput [:-1]
         return result
 
 
@@ -23,7 +20,7 @@ class Tape:
     def next  (self):
         'next character from tape'
 
-        result     = self._ucheck 
+        result     = self.ucheck ()
         if result != None: return result
         return self._next
         
