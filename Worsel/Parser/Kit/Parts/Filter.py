@@ -2,6 +2,7 @@
 " This file uses the following libraries:
 """
 from Kit.Stack.Stack import Stack
+from Complaint import Complaint
 
 
 
@@ -11,6 +12,8 @@ class Filter:
     def __init__        (self):
         self.index     = 0 
         self.is_in_use = False
+        self.complaint = Complaint ()
+
 
     @property 
     def sequence        (self):
@@ -23,10 +26,6 @@ class Filter:
         'may we begin parse with this sequence?'
 
         return datum == (self.sequence [0])
-
-
-    def complain        (self, status, instance, datum):
-        'compose a complaint to the user'
 
 
     def __call__        (self, datum):

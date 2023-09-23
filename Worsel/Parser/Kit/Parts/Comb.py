@@ -12,8 +12,8 @@ class Comb (Filter):
 
     def __init__        (self):
         Filter.__init__ (self)
-        self.precondition    = self.PRECONDITION ()
-        self.alternatives    = self.ALTERNATIVES ()
+        self.precondition = self.PRECONDITION
+        self.alternatives = self.ALTERNATIVES
 
 
     @property 
@@ -62,9 +62,9 @@ class Comb (Filter):
                 
         # no statement matches?
         if (not use_this_alternative):
-            return self.complain (self.COMPLAIN.ACCEPT,
-                                  self,
-                                  tape)
+            return self.complaint (self.complaint.ACCEPT,
+                                   self,
+                                   tape)
 
         # set up current statement on top of stack.
         # (we use a stack because we want a 
