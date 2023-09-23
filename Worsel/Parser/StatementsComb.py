@@ -12,18 +12,24 @@ from OnGoto          import OnGoto
 from If              import If 
 
 
+class StatementAlts (list):
+    'alternative choices for IF statement'
+
+    def __init__ (self):
+        list.__init__ ([ Let,
+                         Option,
+                         Stop,
+                         End,
+                         Rem,
+                         Goto,
+                         OnGoto,
+                         If,
+                       ])
+
+
 
 class StatementsComb (Comb):
     'Comb from choice of statements'
 
-    PRECONDITION =   LabelComb
-
-    ALTERNATIVES = [ Let,
-                     Option,
-                     Stop,
-                     End,
-                     Rem,
-                     Goto,
-                     OnGoto,
-                     If,
-                   ]
+    PRECONDITION = LabelComb
+    ALTERNATIVES = StatementAlts

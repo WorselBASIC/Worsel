@@ -1,5 +1,3 @@
-class Index:
-    pass
 from Kit.Parts.Label import Label
 
 

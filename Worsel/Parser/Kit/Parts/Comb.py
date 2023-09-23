@@ -7,13 +7,38 @@ class Comb (Filter):
     'Filter input for a language construction'
 
     PRECONDITION  = None
-    ALTERNATIVES  = []
+    ALTERNATIVES  = None
 
 
     def __init__        (self):
         Filter.__init__ (self)
-        self.precondition    = self.PRECONDITION
-        self.alternatives    = self.ALTERNATIVES
+        self.precondition    = self.PRECONDITION ()
+        self.alternatives    = self.ALTERNATIVES ()
+
+
+    @property 
+    def precondition    (self):
+        return self._precondition
+    
+
+    @precondition.setter
+    def precondition    (self, klass):
+        if klass: 
+            self._precondition = klass ()
+        else:
+            self._precondition = None
+
+    @property 
+    def alternatives    (self):
+        return self._alternatives
+    
+    
+    @alternatives.setter
+    def alternatives    (self, klass):
+        if klass: 
+            self._alternatives = klass ()
+        else:
+            self._alternatives = []
 
 
     def __call__        (self, tape):
@@ -27,7 +52,7 @@ class Comb (Filter):
 
         # no current statement yet?
         if self.precondition:
-            if (status := self.precondition (self, tape)):
+            if (status := self.precondition (tape)):
                 return self.complain (status, self, tape)
         
         # find the statement beginning match

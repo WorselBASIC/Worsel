@@ -14,20 +14,26 @@ from Dyads          import NEDyad
 from Dyads          import EQDyad
 
 
+class ExpressionAlts (list):
+    'alternative choices for expression'
+
+    def __init__ (self):
+        list.__init__ ( [ AdditionDyad,
+                          SubtractionDyad, 
+                          MultiplicationDyad,
+                          DivisionDyad,
+                          SequenceDyad,
+                          GEDyad,
+                          GTDyad,
+                          LEDyad,
+                          LTDyad,
+                          NEDyad,
+                          EQDyad,
+                        ])
+
 
 class ExpressionComb (Comb):
     'Comb for BASIC Expression'
     
-    PRECONDITION =   Expression 
-    ALTERNATIVES = [ AdditionDyad,
-                     SubtractionDyad, 
-                     MultiplicationDyad,
-                     DivisionDyad,
-                     SequenceDyad,
-                     GEDyad,
-                     GTDyad,
-                     LEDyad,
-                     LTDyad,
-                     NEDyad,
-                     EQDyad,
-                   ]
+    PRECONDITION = Expression 
+    ALTERNATIVES = ExpressionAlts
