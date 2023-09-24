@@ -1,8 +1,7 @@
 from Parser.Combs.ExpressionIng.Expression import Expression
-from Parser.Combs.StatementIng.Statement   import Statement 
 from Tokens                                import EndOfLineToken
 from Kit.Parts.Marker                      import Marker
-
+from Kit.Parts.Sequence                    import Sequence
 
 
 class OptionMarker    (Marker):
@@ -12,12 +11,10 @@ class OptionMarker    (Marker):
 
 
 
-class Option (Statement):
+class OptionSequence  (Sequence):
 
-    @property
-    def sequence (self):
-        return [ OptionMarker,
-                 Expression,
-                 Expression,
-                 EndOfLineToken
-               ]
+    ITEMS = [ OptionMarker,
+              Expression,
+              Expression,
+              EndOfLineToken
+            ]
