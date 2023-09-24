@@ -1,7 +1,7 @@
-from Kit.Parts.Marker import Marker 
-from Statement        import Statement 
-from Expression       import Expression
-from IfComb           import IfComb
+from Kit.Parts.Marker                      import Marker 
+from Parser.Combs.StatementIng.Statement   import Statement 
+from Parser.Combs.ExpressionIng.Expression import Statement 
+from IfComb                                import IfComb
 
 
 

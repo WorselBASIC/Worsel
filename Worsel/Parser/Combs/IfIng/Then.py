@@ -1,6 +1,6 @@
-from Statement        import Statement 
-from Block            import Block
-from Kit.Parts.Marker import Marker
+from Parser.Combs.StatementIng.Statement import Statement 
+from Block                               import Block
+from Kit.Parts.Marker                    import Marker
 
 
 

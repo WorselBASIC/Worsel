@@ -1,7 +1,7 @@
-from Statement        import Statement 
-from Kit.Parts.Marker import Marker 
-from Tokens           import EndOfLineToken
-from Expression       import Expression
+from Parser.Combs.StatementIng.Statement import Statement 
+from Parser.Combs.ExpressionIng.Expression import Expression
+from Kit.Parts.Marker                      import Marker 
+from Tokens                                import EndOfLineToken
 
 
 
