@@ -1,12 +1,12 @@
-from Kit.Parts.Sequence    import Sequence
-from Parser.Combs.IfIng    import If
-from Let                   import Let 
-from Option                import Option
-from Parser.Scans.EndScan  import End
-from Stop                  import Stop 
-from Rem                   import Rem 
-from Parser.Scans.GotoScan import Goto
-from OnGoto                import OnGoto
+from Kit.Parts.Sequence      import Sequence
+from Parser.Combs.IfIng      import If
+from Let                     import Let 
+from Option                  import Option
+from Parser.Scans.EndScan    import End
+from Stop                    import Stop 
+from Rem                     import Rem 
+from Parser.Scans.GotoScan   import Goto
+from Parser.Scans.OnGotoScan import Goto
 
 
 

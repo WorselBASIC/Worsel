@@ -1,5 +1,5 @@
-from Parser.Combs.StatementIng.Statement import Statement 
 from Parser.Combs.ExpressionIng.Expression import Expression
+from Kit.Parts.Sequence                    import Sequence
 from Kit.Parts.Marker                      import Marker 
 from Tokens                                import EndOfLineToken
 
@@ -19,14 +19,12 @@ class GotoMarker (Marker):
 
 
 
-class OnGoto      (Statement):
-    'accept ON GOTO statement'
+class OnGotoSequence (Sequence):
+    'sequence of ON GOTO statement'
 
-    @property
-    def sequence (self):
-        return [ OnMarker,
-                 Expression,
-                 GotoMarker,
-                 Expression,
-                 EndOfLineToken,
-               ]
+    ITEMS = [ OnMarker,
+              Expression,
+              GotoMarker,
+              Expression,
+              EndOfLineToken,
+            ]
