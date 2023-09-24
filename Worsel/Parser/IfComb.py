@@ -1,17 +1,6 @@
 from Kit.Parts.Comb import Comb
-from Then           import Then
-from Else           import Else
-from ThenElse       import ThenElse
+from IfAlts         import IfAlts
 
-
-
-class IfAlts (list):
-    'alternative choices for IF statement'
-
-    def __init__ (self):
-        list.__init__ ([Then,
-                        Else, 
-                        ThenElse,])
 
 
 class IfComb (Comb):

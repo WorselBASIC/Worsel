@@ -1,10 +1,10 @@
-from Kit.Parts.Comb       import Comb 
-from Tokens               import RParenToken
-from Kit.Parts.Expression import Expression
+from Kit.Parts.Comb import Comb 
+from ParenAlts      import ParenAlts
+
 
 
 class ParenComb (Comb):
-    ''
+    'Comb through optional parentheses'
     
-    PRECONDITION =   None
-    ALTERNATIVES = [ Expression, RParenToken ]
+    PRECONDITION = None
+    ALTERNATIVES = ParenAlts

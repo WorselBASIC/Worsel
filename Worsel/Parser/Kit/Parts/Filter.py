@@ -2,24 +2,28 @@
 " This file uses the following libraries:
 """
 from Kit.Stack.Stack import Stack
-from Complaint import Complaint
+from Sequence        import Sequence
+from Complaint       import Complaint
 
 
 
 class Filter:
     'contains parsing primitives'
 
+    SEQUENCE = Sequence
+
     def __init__        (self):
         self.index     = 0 
         self.is_in_use = False
         self.complaint = Complaint ()
+        self._sequence = self.SEQUENCE ()
 
 
     @property 
     def sequence        (self):
         'the sequence of items being filtered'
 
-        return []
+        return self._sequence
 
 
     def is_acceptable   (self, datum):
