@@ -4,7 +4,7 @@ from Parser.Scans.LetScan    import Let
 from Parser.Scans.OptionScan import Option
 from Parser.Scans.EndScan    import End
 from Stop                    import Stop 
-from Rem                     import Rem 
+from Parser.Scans.RemScan    import Rem
 from Parser.Scans.GotoScan   import Goto
 from Parser.Scans.OnGotoScan import OnGoto
 
