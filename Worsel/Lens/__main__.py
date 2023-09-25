@@ -13,9 +13,11 @@ test   = join  (app [0], script)
 
 from Worsel.Parser.Kit.Tape.StdinTape import StdinTape
 from Worsel.Parser.Kit.Tape.FileTape  import FileTape
+from Worsel.Parser.Kit.Tape.TheTape   import set_the_tape
 
-
+set_the_tape    (FileTape (test))
+tape = FileTape (test)   # debugging test point
 
 from Worsel.Lens.Lens import Lens
-lens = Lens (FileTape (test))
+lens = Lens ()
 lens ()

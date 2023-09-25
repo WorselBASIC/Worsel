@@ -6,5 +6,6 @@ class Sequence (list):
 
     def __init__      (self):
 
-        instances = [ i() for i in self.ITEMS ]
+        klasses   = [ i   for i in self.ITEMS ]
+        instances = [ i() for i in klasses]
         list.__init__ (instances)

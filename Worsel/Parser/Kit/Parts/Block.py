@@ -1,6 +1,7 @@
 """
 " This file uses these libraries:
 """
+from Kit.Tape.TheTape import get_the_tape
 from Statement import Statement 
 from Comb      import Comb
 
@@ -12,15 +13,15 @@ class Block (Statement):
     COMB = Comb 
 
 
-    def __init__ (self, _tape):
+    def __init__ (self):
         self.comb = self.COMB ()
-        self.tape = _tape
 
 
     def __call__ (self):
-        while (datum := self.tape.next):
+        tape = get_the_tape ()
+        while (datum := tape.next):
             self.tape.unput = datum
-            if (status := self.comb  (self.tape)):
+            if (status := self.comb  (tape)):
                 return self.complain (self.comb, status, datum)
             
 

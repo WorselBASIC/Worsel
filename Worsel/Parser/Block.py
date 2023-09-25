@@ -10,6 +10,9 @@ class Block (_Block):
 
     COMB = None
 
+    def __init__ (self):
+        _Block.__init__ (self)
+
 
 
 def hoist   (klass):
@@ -18,7 +21,7 @@ def hoist   (klass):
     Python recursive reference error.
     """
     Block.COMB = klass
-
+    x = Block.COMB  # debugging test point
 
 
 """ End of Block.py """

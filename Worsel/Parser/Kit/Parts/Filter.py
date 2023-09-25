@@ -2,6 +2,7 @@
 " This file uses the following libraries:
 """
 from Kit.Stack.Stack import Stack
+from Kit.Tape.Tape   import Tape
 from Sequence        import Sequence
 from Complaint       import Complaint
 
