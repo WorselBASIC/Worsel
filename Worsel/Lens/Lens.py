@@ -25,16 +25,19 @@ sys.path.append (x4d)
 """
 " This file uses the following libraries
 """
-from Worsel.Parser.Block                             import Block
-from Worsel.Parser.Block                             import hoist
+from Worsel.Parser.ParserBlock                       import ParserBlock
+from Worsel.Parser.ParserBlock                       import hoist
 from Worsel.Parser.Combs.StatementIng.StatementsComb import StatementsComb
 
 hoist (StatementsComb)  # recusion hoist
 
 
 
-class Lens (Block):
+class Lens (ParserBlock):
     'top-level execution point of BASIC parser'
+
+    def __init__ (self):
+        ParserBlock.__init__ (self)
 
 
 
