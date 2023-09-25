@@ -2,8 +2,8 @@
 " This file uses these libraries:
 """
 from Kit.Tape.TheTape import get_the_tape
-from Statement import Statement 
-from Comb      import Comb
+from Statement        import Statement 
+from Comb             import Comb
 
 
 

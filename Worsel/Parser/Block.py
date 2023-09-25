@@ -24,4 +24,5 @@ def hoist   (klass):
     x = Block.COMB  # debugging test point
 
 
+
 """ End of Block.py """
