@@ -12,8 +12,6 @@ class Comb (Filter):
 
     def __init__        (self):
 
-        Filter.__init__ (self)
-        
         self.precondition = None 
 
         if (self.PRECONDITION != None):
@@ -24,7 +22,7 @@ class Comb (Filter):
         if (self.ALTERNATIVES != None):
             self.alternatives  = self.ALTERNATIVES ()
 
-
+        Filter.__init__ (self)
         
 
     def __call__        (self, tape):
