@@ -3,5 +3,8 @@ class Sequence (list):
 
     ITEMS = []
 
+
     def __init__      (self):
-        list.__init__ (self, self.ITEMS)
+
+        instances = [ i() for i in self.ITEMS ]
+        list.__init__ (instances)

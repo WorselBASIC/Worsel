@@ -1,7 +1,7 @@
-from Kit.Parts.Sequence                    import Sequence
-from Parser.Combs.IfIng.Scans.ThenScan     import Then 
-from Parser.Combs.IfIng.Scans.ElseScan     import Else
-from Parser.Combs.IfIng.Scans.ThenElseScan import ThenElse 
+from Kit.Parts.Sequence                             import Sequence
+from Parser.Combs.IfIng.Scans.ThenScan.Then         import Then 
+from Parser.Combs.IfIng.Scans.ElseScan.Else         import Else
+from Parser.Combs.IfIng.Scans.ThenElseScan.ThenElse import ThenElse 
 
 
 

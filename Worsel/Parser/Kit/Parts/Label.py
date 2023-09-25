@@ -1,4 +1,4 @@
 from Filter import Filter
 
-class Label:
+class Label (Filter):
     'common code for statement label'
