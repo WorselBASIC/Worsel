@@ -25,11 +25,12 @@ sys.path.append (x4d)
 """
 " This file uses the following libraries
 """
-from Worsel.Parser.Block              import Block
-from Worsel.Parser.Block              import hoist
-from Worsel.Parser.StatementsComb     import StatementsComb
+from Worsel.Parser.Block                             import Block
+from Worsel.Parser.Block                             import hoist
+from Worsel.Parser.Combs.StatementIng.StatementsComb import StatementsComb
 
 hoist (StatementsComb)  # recusion hoist
+
 
 
 class Lens (Block):

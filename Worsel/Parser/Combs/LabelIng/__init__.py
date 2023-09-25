@@ -1,1 +1,3 @@
-__all__ = [ 'LabelComb', ]
+__all__ = [ 'LabelComb', 
+            'LabelAlts'
+          ]

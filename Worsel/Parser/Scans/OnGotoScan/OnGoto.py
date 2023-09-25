@@ -1,5 +1,5 @@
-from Kit.Parts.Filter import Filter 
-from OnGotoSequence   import OnGotoSequence
+from Kit.Parts.Filter                       import Filter 
+from Parser.Scans.OnGotoScan.OnGotoSequence import OnGotoSequence
 
 
 

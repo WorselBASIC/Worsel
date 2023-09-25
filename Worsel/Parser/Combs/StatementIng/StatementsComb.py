@@ -1,8 +1,8 @@
 
 
-from Kit.Parts.Comb                  import Comb
-from Parser.Combs.LabelIng.LabelComb import LabelComb
-from StatementAlts                   import StatementAlts
+from Kit.Parts.Comb                          import Comb
+from Parser.Combs.LabelIng.LabelComb         import LabelComb
+from Parser.Combs.StatementIng.StatementAlts import StatementAlts 
 
 
 

@@ -1,5 +1,5 @@
-from Kit.Parts.Filter import Filter 
-from ThenSequence     import ThenSequence
+from Kit.Parts.Filter                               import Filter 
+from Parser.Combs.IfIng.Scans.ThenScan.ThenSequence import ThenSequence
 
 
 

@@ -1,5 +1,5 @@
-from Kit.Parts.Comb import Comb
-from LabelAlts      import LabelAlts
+from Kit.Parts.Comb                  import Comb
+from Parser.Combs.LabelIng.LabelAlts import LabelAlts
 
 
 

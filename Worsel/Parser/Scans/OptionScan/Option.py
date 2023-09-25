@@ -1,5 +1,5 @@
-from Kit.Parts.Filter import Filter 
-from OptionSequence   import OptionSequence
+from Kit.Parts.Filter                       import Filter 
+from Parser.Scans.OptionScan.OptionSequence import OptionSequence
 
 
 

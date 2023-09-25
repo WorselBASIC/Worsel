@@ -1,7 +1,7 @@
-from Kit.Parts.Sequence import Sequence
-from IndexedLabel       import IndexedLabel
-from NamedLabel         import NamedLabel 
-from BlankLabel         import BlankLabel
+from Kit.Parts.Sequence                 import Sequence
+from Parser.Combs.LabelIng.IndexedLabel import IndexedLabel
+from Parser.Combs.LabelIng.NamedLabel   import NamedLabel 
+from Parser.Combs.LabelIng.BlankLabel   import BlankLabel
 
 
 

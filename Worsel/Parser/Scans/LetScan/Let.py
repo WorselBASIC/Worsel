@@ -1,5 +1,5 @@
-from Kit.Parts.Filter import Filter 
-from LetSequence      import LetSequence
+from Kit.Parts.Filter                 import Filter 
+from Parser.Scans.LetScan.LetSequence import LetSequence
 
 
 

@@ -1,1 +1,4 @@
-__all__ = [ 'Statement' ]
+__all__ = [ 'Statement',
+            'StatementAlts',
+            'StatementComb',
+          ]

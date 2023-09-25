@@ -1,5 +1,5 @@
-from Kit.Parts.Comb import Comb
-from IfAlts         import IfAlts
+from Kit.Parts.Comb            import Comb
+from Parser.Combs.IfIng.IfAlts import IfAlts
 
 
 

@@ -1,5 +1,5 @@
-from Kit.Parts.Filter import Filter 
-from StopSequence     import StopSequence
+from Kit.Parts.Filter                   import Filter 
+from Parser.Scans.StopScan.StopSequence import StopSequence
 
 
 

@@ -1,5 +1,5 @@
-from Kit.Parts.Filter import Filter
-from RemSequence      import RemSequence
+from Kit.Parts.Filter                 import Filter
+from Parser.Scans.RemScan.RemSequence import RemSequence
 
 
 

@@ -1,5 +1,5 @@
-from Kit.Parts.Filter import Filter
-from EndSequence      import EndSequence
+from Kit.Parts.Filter                 import Filter
+from Parser.Scans.EndScan.EndSequence import EndSequence
 
 
 
