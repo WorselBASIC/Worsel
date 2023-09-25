@@ -40,13 +40,19 @@ class Filter:
         return begin
 
 
+    def is_front_check  (self, peek, check):
+        'override for custom behavior'
+
+        return False 
+    
+
     @property 
     def is_acceptable   (self):
         'may we begin parse with this sequence?'
 
-        tape  = TheTape().tape
-
-        return (tape.peek == self.starting)
+        return self.is_front_check (TheTape().tape.peek,
+                                    self.starting
+                                   )
 
 
     def __call__        (self, datum):
