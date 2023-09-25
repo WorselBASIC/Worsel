@@ -11,6 +11,7 @@ __all__     = [ 'Associate',
                 'Precedence',
                 'Sequence',
                 'Statement',
+                'Singleton',
                 'Template',
                 'Token',
               ]

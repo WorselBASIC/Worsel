@@ -1,9 +1,9 @@
 """
 " This file uses these libraries:
 """
-from Kit.Tape.TheTape import get_the_tape
-from Statement        import Statement 
-from Comb             import Comb
+from Worsel.Parser.Kit.Tape.TheTape import TheTape
+from Statement                      import Statement 
+from Comb                           import Comb
 
 
 
@@ -23,7 +23,7 @@ class Block (Statement):
     def __call__ (self):
         'parse action'
 
-        tape = get_the_tape ()
+        tape = TheTape ().tape  # singleton
         
         while (datum := tape.next):
             self.tape.unput = datum

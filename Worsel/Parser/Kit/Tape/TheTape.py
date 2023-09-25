@@ -1,9 +1,27 @@
-__the_tape = None 
+from Worsel.Parser.Kit.Parts.Singleton import Singleton
 
 
-def get_the_tape ():
-    return __the_tape 
+
+class TheTape              (Singleton):
+    "program's input tape is a singleton"
+    
 
 
-def set_the_tape (tape):
-    __the_tape = tape
+    @property 
+    def tape               (self):
+        'singleton tape getter'
+
+        return getattr (self, '_tape', None)
+
+    
+
+    @tape.setter
+    def tape               (self, t):
+        'singleton tape setter'
+
+        setattr (self, '_tape', t)
+
+
+
+
+""" End of TheTape.py """
