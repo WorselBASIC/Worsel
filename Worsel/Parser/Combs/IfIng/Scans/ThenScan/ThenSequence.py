@@ -1,4 +1,4 @@
-from Block              import Block
+from Parser.ParserBlock import ParserBlock
 from Kit.Parts.Marker   import Marker
 from Kit.Parts.Sequence import Sequence
 
@@ -13,5 +13,5 @@ class ThenSequence  (Sequence):
     'sequence of THEN clause'
 
     ITEMS = [ ThenMarker,
-              Block,
+              ParserBlock,
             ]

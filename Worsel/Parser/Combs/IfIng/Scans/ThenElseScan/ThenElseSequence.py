@@ -1,5 +1,5 @@
 from Kit.Parts.Sequence import Sequence
-from Block              import Block
+from Parser.ParserBlock import ParserBlock
 from Kit.Parts.Marker   import Marker
 
 
@@ -18,7 +18,7 @@ class ThenElseSequence (Sequence):
     'sequence of THEN ELSE clause'
 
     ITEMS = [ ThenMarker,
-              Block,
+              ParserBlock,
               ElseMarker,
-              Block,
+              ParserBlock,
             ]

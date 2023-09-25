@@ -1,4 +1,4 @@
-__all__     = [ 'Block',
+__all__     = [ 'ParserBlock',
                 'Dyads',
                 'Else',
                 'End',

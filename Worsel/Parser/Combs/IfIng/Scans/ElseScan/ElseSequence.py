@@ -1,5 +1,5 @@
 from Kit.Parts.Marker   import Marker
-from Block              import Block
+from Parser.ParserBlock import ParserBlock
 from Kit.Parts.Sequence import Sequence
 
 
@@ -12,4 +12,6 @@ class ElseToken    (Marker):
 class ElseSequence (Sequence):
     'sequence of ELSE statement'
 
-    ITEMS = [ ElseToken, Block ]
+    ITEMS = [ ElseToken, 
+              ParserBlock 
+            ]
