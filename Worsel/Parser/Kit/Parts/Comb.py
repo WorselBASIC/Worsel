@@ -25,23 +25,23 @@ class Comb (Filter):
         Filter.__init__ (self)
         
 
-    def __call__        (self, tape):
+    def __call__        (self):
         'parse next datum in current statement'
 
         use_this_alternative = None 
 
         # advances current statement
         if self.is_in_use:
-            return Stack.rear (tape)
+            return Stack.rear (None)
 
         # no current statement yet?
         if self.precondition:
-            if (status := self.precondition (tape)):
+            if (status := self.precondition ()):
                 return self.complain (status, self, tape)
         
         # find the statement beginning match
         for alternative in self.alternatives:
-            if (alternative.is_acceptable (tape)):
+            if (alternative.is_acceptable):
                 use_this_alternative = alternative
                 
         # no statement matches?

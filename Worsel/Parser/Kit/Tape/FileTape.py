@@ -12,7 +12,8 @@ class FileTape (_Tape):
         self._width = 1
 
 
-    @property
-    def next     (self):
+    def read     (self):
+        'File version of tape read'
+        
         x = self.file.read ()
         return x

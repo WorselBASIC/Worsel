@@ -1,8 +1,9 @@
 class Tape:
-    'Abstract interface to program input'
+    'Abstracted program input'
+
 
     def __init__ (self):
-        self._next  = None
+
         self._width = 0
         self._unput = []
 
@@ -14,16 +15,17 @@ class Tape:
         result         = self._unput [0]
         self._unput    = self._unput [:-1]
         return result
+    
 
+    @property 
+    def peek  (self):
+        "next letter to be read"
 
-    @property
-    def next  (self):
-        'next character from tape'
+        if self._unput == []:
+            self.unput =  self.read ()
 
-        result     = self.ucheck ()
-        if result != None: return result
-        return self._next
-        
+        return self.unput [0]
+
 
     @property
     def width (self):
@@ -54,4 +56,6 @@ class Tape:
         self._unput += [ value ]
 
 
+    def read  (self):
+        'override for custom behavior'
 

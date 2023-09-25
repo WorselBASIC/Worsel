@@ -25,9 +25,8 @@ class Block (Statement):
 
         tape = TheTape ().tape  # singleton
         
-        while (datum := tape.next):
-            self.tape.unput = datum
-            if (status := self.comb  (tape)):
+        while (datum := tape.peek):
+            if (status := self.comb  ()):
                 return self.complain (self.comb, status, datum)
             
 
