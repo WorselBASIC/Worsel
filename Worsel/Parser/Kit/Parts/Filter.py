@@ -30,8 +30,11 @@ class Filter:
     
 
     @property 
-    def starting        (self):
-        'override for custom behavior'
+    def start           (self):
+        """
+        criteron for start of parse.
+        override as needed.
+        """
 
         if (len (self.sequence) == 0):
             return None
@@ -40,26 +43,40 @@ class Filter:
         return begin
 
 
-    def is_front_check  (self, peek, check):
-        'override for custom behavior'
+    def is_start        (self, peek, check):
+        """
+        logic to allow start of parse.
+        override as needed.
+        """
 
         return False 
     
 
     @property 
-    def is_acceptable   (self):
-        'may we begin parse with this sequence?'
+    def next            (self):
+        'short cut to next in tape'
 
-        return self.is_front_check (self.me.front, 
-                                    self.starting)
+        return TheTape().tape.next
+
+
+    @property 
+    def is_acceptable   (self):
+        'begin parse at start of sequence?'
+
+        return self.is_start (self.next, self.start)
+
 
     @property 
     def me              (self):
+        'shortcut for read stack'
+
         return TheStack ().stack
     
 
     @me.setter 
     def me              (self, value):
+        'shortcut for push stack'
+
         TheStack ().stack = value
 
 

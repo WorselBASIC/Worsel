@@ -11,14 +11,15 @@ class Stack:
 
 
     @property 
-    def front     (self):
+    def front       (self):
         'get front of stack'
 
+        if (len (self) == 0): return None
         return self._data [0] 
     
 
     @front.setter
-    def front    (self, value):
+    def front      (self, value):
         'use assignment to front as push/pop'
 
         if (value == None):
@@ -29,8 +30,12 @@ class Stack:
 
 
     @property 
-    def rear     (self):
+    def rear       (self):
         'get rear of stack'
 
+        if (len (self) == 0): return None
         return self._data [-1] 
     
+
+    def __len__    (self):
+        return len (self._data)

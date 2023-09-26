@@ -9,7 +9,7 @@ class IndexedLabel (Label):
 
     SEQUENCE = DigitsParser
 
-    def is_front_check (self, peek, check):
+    def is_start   (self, peek, check):
 
         status = check (peek)
         return (status == Complaint.SUCCESS)
