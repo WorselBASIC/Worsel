@@ -32,7 +32,7 @@ class Comb (Filter):
 
         # advances current statement
         if self.is_in_use:  
-            return self.me.rear
+            return self.me.is_parseable
 
         # no current statement yet?
         if self.precondition:

@@ -41,6 +41,20 @@ class Filter:
         
         begin = self.sequence [0]
         return begin
+    
+
+    @property 
+    def sense           (self):
+        """
+        criteron for next in parse.
+        override as needed.
+        """
+
+        if (len (self.sequence) == 0):
+            return None
+        
+        begin = self.sequence [0]
+        return begin
 
 
     def is_start        (self, peek, check):
@@ -52,11 +66,21 @@ class Filter:
         return False 
     
 
+    def is_sense        (self, peek, check):
+        """
+        logic to allow continuing parse.
+        override as needed.
+        """
+
+        return False 
+    
+
     @property 
     def next            (self):
         'short cut to next in tape'
 
-        return TheTape().tape.next
+        result = TheTape().tape.peek
+        return result
 
 
     @property 
@@ -67,16 +91,24 @@ class Filter:
 
 
     @property 
+    def is_parseable    (self):
+        'continue parse?'
+
+        return self.is_next  (self.next, self.sense)
+
+
+    @property 
     def me              (self):
         'shortcut for read stack'
 
-        return TheStack ().stack
+        return TheStack ().stack.front
     
 
     @me.setter 
     def me              (self, value):
         'shortcut for push stack'
 
-        TheStack ().stack = value
+        TheStack ().stack.front = value
+
 
 
