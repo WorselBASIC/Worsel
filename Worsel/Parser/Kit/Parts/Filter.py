@@ -1,10 +1,10 @@
 """
 " This file uses the following libraries:
 """
-from Kit.Stack.Stack                import Stack
-from Worsel.Parser.Kit.Tape.TheTape import TheTape
-from Sequence                       import Sequence
-from Complaint                      import Complaint
+from Worsel.Parser.Kit.Stack.TheStack import TheStack
+from Worsel.Parser.Kit.Tape.TheTape   import TheTape
+from Sequence                         import Sequence
+from Complaint                        import Complaint
 
 
 
@@ -50,10 +50,16 @@ class Filter:
     def is_acceptable   (self):
         'may we begin parse with this sequence?'
 
-        return self.is_front_check (TheTape().tape.peek,
-                                    self.starting
-                                   )
+        return self.is_front_check (self.me.front, 
+                                    self.starting)
+
+    @property 
+    def me              (self):
+        return TheStack ().stack
+    
+
+    @me.setter 
+    def me              (self, value):
+        TheStack ().stack = value
 
 
-    def __call__        (self, datum):
-        Stack.put       (self, datum)

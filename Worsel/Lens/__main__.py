@@ -15,9 +15,16 @@ from Worsel.Parser.Kit.Tape.StdinTape import StdinTape
 from Worsel.Parser.Kit.Tape.FileTape  import FileTape
 from Worsel.Parser.Kit.Tape.TheTape   import TheTape
 
-tape      = TheTape  ()
-tape.tape = FileTape (test)
-tape      = tape.tape   # debugging test point
+tape        = TheTape  ()
+tape.tape   = FileTape (test)
+tape        = tape.tape   # debugging test point
+
+from Worsel.Parser.Kit.Stack.Stack    import Stack
+from Worsel.Parser.Kit.Stack.TheStack import TheStack
+
+stack       = TheStack ()
+stack.stack = Stack    ()
+stack       = stack.stack # debugging test point
 
 from Worsel.Lens.Lens import Lens
 lens = Lens ()

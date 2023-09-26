@@ -1,5 +1,5 @@
-from Kit.Parts.Filter import Filter
-from Stack            import Stack
+from Kit.Parts.Filter                 import Filter
+from Worsel.Parser.Kit.Stack.TheStack import TheStack
 
 
 
@@ -31,8 +31,8 @@ class Comb (Filter):
         use_this_alternative = None 
 
         # advances current statement
-        if self.is_in_use:
-            return Stack.rear (None)
+        if self.is_in_use:  
+            return self.me.rear
 
         # no current statement yet?
         if self.precondition:
@@ -54,9 +54,9 @@ class Comb (Filter):
         # (we use a stack because we want a 
         #  non-recursive parser design which we
         #  can more easily port away from Python)       
-        Stack.put (use_this_alternative)
-        self.is_in_use    = True
-        Stack.rear.index += 1 
+        self.me        = use_this_alternative
+        self.is_in_use = True
+
 
             
 
