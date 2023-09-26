@@ -37,24 +37,24 @@ class Comb (Filter):
         # no current statement yet?
         if self.precondition:
             if (status := self.precondition ()):
-                return self.complain (status, self, tape)
+                return self.complain (status, self)
         
         # find the statement beginning match
         for alternative in self.alternatives:
             if (alternative.is_acceptable):
                 use_this_alternative = alternative
-                
+                break
+
         # no statement matches?
         if (not use_this_alternative):
             return self.complaint (self.complaint.ACCEPT,
-                                   self,
-                                   tape)
+                                   self)
 
         # set up current statement on top of stack.
         # (we use a stack because we want a 
         #  non-recursive parser design which we
         #  can more easily port away from Python)       
-        Stack.put (use_this_alternative(), tape)
+        Stack.put (use_this_alternative)
         self.is_in_use    = True
         Stack.rear.index += 1 
 
