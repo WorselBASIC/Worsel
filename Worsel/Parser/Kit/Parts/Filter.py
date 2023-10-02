@@ -16,7 +16,6 @@ class Filter:
 
     def __init__        (self):
 
-        self.index     = 0 
         self.is_in_use = False
         self.complaint = Complaint ()
         self._sequence = self.SEQUENCE ()
@@ -75,6 +74,12 @@ class Filter:
         return False 
     
 
+    def advance         (self):
+        'advance to next symbol in tape'
+
+        TheTape().tape.advance ()
+
+
     @property 
     def next            (self):
         'short cut to next in tape'
@@ -94,7 +99,7 @@ class Filter:
     def is_parseable    (self):
         'continue parse?'
 
-        return self.is_next  (self.next, self.sense)
+        return self.is_sense (self.next, self.sense)
 
 
     @property 

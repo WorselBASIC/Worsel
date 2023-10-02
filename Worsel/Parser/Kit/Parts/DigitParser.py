@@ -4,27 +4,22 @@ from Kit.Parts.Complaint import Complaint
 
 
 class DigitParser:
-    'parse each digit'
+    'parse a digit'
 
-    LIMIT  = 32
-    DIGITS = [ '0', '1', '2', '3',
-               '4', '5', '6', '7', 
-               '8', '9'
-             ]
-
-
-    def __init__   (self):
-
-        self.result = []
-        self.length = 0
+    DIGITS  = [ '0', '1', '2', '3',
+                '4', '5', '6', '7', 
+                '8', '9'
+              ]
+    
+    RESULTS = [ Complaint.MATCH,
+                Complaint.SUCCESS,
+              ]
 
 
-    def __call__   (self, data):
+    def __init__ (self):
+        pass
 
-        if (self.length > self.LIMIT):
-            return Complaint.LIMIT 
-        
-        if (data not in self.DIGITS):
-            return Complaint.MATCH 
-        
-        return Complaint.SUCCESS
+
+    def __call__ (self, data):
+        return self.RESULTS [data in self.DIGITS]
+

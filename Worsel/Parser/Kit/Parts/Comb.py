@@ -1,5 +1,6 @@
 from Kit.Parts.Filter                 import Filter
 from Worsel.Parser.Kit.Stack.TheStack import TheStack
+from Kit.Parts.Complaint              import Complaint
 
 
 
@@ -56,6 +57,7 @@ class Comb (Filter):
         #  can more easily port away from Python)       
         self.me        = use_this_alternative
         self.is_in_use = True
+        return Complaint.SUCCESS
 
 
             

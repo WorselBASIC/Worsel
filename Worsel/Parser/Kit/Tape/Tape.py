@@ -1,17 +1,27 @@
 class Tape:
     'Abstracted program input'
 
+    NOTHING = str ('')
+
 
     def __init__ (self):
 
         self._width = 0
-        self._unput = []
+        self._unput = self.NOTHING
+
+
+    @property
+    def is_empty__unput (self):
+        'is an empty _unput buffer?'
+
+        return (self._unput == self.NOTHING)
 
 
     def ucheck (self):
         'check unput buffer'
 
-        if self._unput == []: return None 
+        if self.is_empty__unput: return self.NOTHING 
+
         result         = self._unput [0]
         self._unput    = self._unput [:-1]
         return result
@@ -21,10 +31,18 @@ class Tape:
     def peek  (self):
         "next letter to be read"
 
-        if self._unput == []:
-            self.unput =  self.read ()
+        if self.is_empty__unput:
+            self.unput = self.read ()
 
-        return self.unput [0]
+        if self.is_empty__unput: return self.NOTHING
+        return self._unput [0]
+
+
+    def advance (self):
+        'advance to next symbol in tape'
+
+        if not self.is_empty__unput: 
+            self._unput = self._unput [:-1]
 
 
     @property
@@ -45,7 +63,7 @@ class Tape:
     def unput (self):
         'latest character unput to this tape'
 
-        if (self._unput == None): return None
+        if self.is_empty__unput: return self.NOTHING
         return self._unput [-1]
     
 
@@ -53,7 +71,7 @@ class Tape:
     def unput (self, value):
         'unput a character to tape'
         
-        self._unput += [ value ]
+        self._unput += value 
 
 
     def read  (self):

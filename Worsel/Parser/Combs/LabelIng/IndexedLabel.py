@@ -8,6 +8,13 @@ class IndexedLabel     (Label):
     'indexed statement label'
 
     SEQUENCE = DigitsParser
+    LIMIT    = 32
+
+
+    def __init__       (self):
+
+        Label.__init__ (self)
+        self.result = []
 
 
     def is_start       (self, peek, check):
@@ -20,5 +27,15 @@ class IndexedLabel     (Label):
     def is_sense       (self, peek, check):
         'logic to allow contining of parse.'
 
+        if (len (self.result) >= self.LIMIT):
+            return Complaint.LIMIT
+
         status = check (peek)
-        return (status == Complaint.SUCCESS)
+
+        if (status != Complaint.SUCCESS):
+            return status
+    
+        self.result += [ peek ]
+        self.advance ()
+        
+        return Complaint.SUCCESS
