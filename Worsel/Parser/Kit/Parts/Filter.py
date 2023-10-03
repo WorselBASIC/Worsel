@@ -11,14 +11,20 @@ from Complaint                        import Complaint
 class Filter:
     'contains parsing primitives'
 
-    SEQUENCE = Sequence
+    PRECONDITION = None
+    SEQUENCE     = Sequence
 
 
     def __init__        (self):
 
-        self.is_in_use = False
-        self.complaint = Complaint ()
-        self._sequence = self.SEQUENCE ()
+        self.precondition = None 
+
+        if (self.PRECONDITION != None):
+            self.precondition  = self.PRECONDITION ()
+
+        self.is_in_use    = False
+        self.complaint    = Complaint ()
+        self._sequence    = self.SEQUENCE ()
 
 
     @property 
@@ -116,4 +122,18 @@ class Filter:
         TheStack ().stack.front = value
 
 
+    def __call__        (self):
+        'parse next datum'
 
+        # advances current statement
+        if self.is_in_use:  
+            return self.me.is_parseable
+
+        # if this statement is not yet advanced,
+        # push possible precondition onto the stack
+        if self.precondition:
+            self.me = self.precondition 
+            return Complaint.PRECONDITION
+
+        return Complaint.SUCCESS
+        

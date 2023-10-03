@@ -32,12 +32,26 @@ from Worsel.Parser.Combs.StatementIng.StatementsComb import StatementsComb
 hoist (StatementsComb)  # recusion hoist
 
 
+from Worsel.Parser.Kit.Stack.TheStack import TheStack
 
-class Lens (ParserBlock):
+
+
+class Lens:
     'top-level execution point of BASIC parser'
 
     def __init__ (self):
-        ParserBlock.__init__ (self)
+        'bootstrap the parser stack'
+
+        TheStack ().stack.front = ParserBlock ()  
+
+
+    def __call__ (self):
+        'calls rule on top of stack till exhausted'
+
+        while    ((me    := TheStack ().stack.front) != None):
+            if   (status := me ()):
+                return status
+
 
 
 

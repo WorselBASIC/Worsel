@@ -23,11 +23,7 @@ class Block (Statement):
     def __call__ (self):
         'parse action'
 
-        tape = TheTape ().tape  # singleton
-        
-        while (datum := tape.peek):
-            if (status := self.comb  ()):
-                return self.complain (self.comb, status, datum)
+        return self.comb ()
             
 
 

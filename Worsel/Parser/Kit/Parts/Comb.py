@@ -7,57 +7,44 @@ from Kit.Parts.Complaint              import Complaint
 class Comb (Filter):
     'Filter input for a language construction'
 
-    PRECONDITION  = None
     ALTERNATIVES  = None
 
 
     def __init__        (self):
 
-        self.precondition = None 
-
-        if (self.PRECONDITION != None):
-            self.precondition  = self.PRECONDITION () 
-
+        Filter.__init__ (self)
+ 
         self.alternatives = None 
 
         if (self.ALTERNATIVES != None):
             self.alternatives  = self.ALTERNATIVES ()
 
-        Filter.__init__ (self)
+
+    @property
+    def alternative     (self):
+        for a in self.alternatives:
+            if (a.is_acceptable):
+                return a
+
         
 
     def __call__        (self):
-        'parse next datum in current statement'
+        'parse next datum'
+                                
+        status = Filter.__call__ (self)
 
-        use_this_alternative = None 
-
-        # advances current statement
-        if self.is_in_use:  
-            return self.me.is_parseable
-
-        # no current statement yet?
-        if self.precondition:
-            if (status := self.precondition ()):
-                return self.complain (status, self)
+        if (status != Complaint.SUCCESS):
+            if (status == Complaint.PRECONDITION):
+                return Complaint.SUCCESS
+            else:
+                return status
         
-        # find the statement beginning match
-        for alternative in self.alternatives:
-            if (alternative.is_acceptable):
-                use_this_alternative = alternative
-                break
-
-        # no statement matches?
-        if (not use_this_alternative):
-            return self.complaint (self.complaint.ACCEPT,
-                                   self)
-
-        # set up current statement on top of stack.
-        # (we use a stack because we want a 
-        #  non-recursive parser design which we
-        #  can more easily port away from Python)       
-        self.me        = use_this_alternative
-        self.is_in_use = True
-        return Complaint.SUCCESS
+        if (match  := self.alternative): 
+            self.me           = match 
+            self.me.is_in_use = True
+            return Complaint.SUCCESS
+    
+        return Complaint.ACCEPT
 
 
             

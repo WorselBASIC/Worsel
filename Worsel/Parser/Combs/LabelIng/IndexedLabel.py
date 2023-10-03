@@ -14,7 +14,7 @@ class IndexedLabel     (Label):
     def __init__       (self):
 
         Label.__init__ (self)
-        self.result = []
+        self.result = ''
 
 
     def is_start       (self, peek, check):
@@ -35,7 +35,6 @@ class IndexedLabel     (Label):
         if (status != Complaint.SUCCESS):
             return status
     
-        self.result += [ peek ]
         self.advance ()
         
         return Complaint.SUCCESS
